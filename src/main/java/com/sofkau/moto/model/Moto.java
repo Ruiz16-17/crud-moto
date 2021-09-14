@@ -8,9 +8,9 @@ import javax.persistence.*;
 public class Moto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer matricula;
-    private String marca;
-    private String modelo;
-    private String color;
+    private Integer identificacion;
+    private String nombre;
+    private String year;
+    private String apariencia;
 
 }
