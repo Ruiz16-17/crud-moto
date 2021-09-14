@@ -11,7 +11,7 @@ public interface MotoServiceInterface {
 
     List<MotoDTO> getAll();
 
-    MotoDTO getById(int id);
+    MotoDTO getById(int id) throws Exception;
 
     Respuesta delete(int id);
 

@@ -5,6 +5,9 @@ import com.sofkau.moto.dto.MotoDTO;
 import com.sofkau.moto.model.Moto;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class Factory {
     public MotoDTO entityToDTO(Moto moto){
@@ -31,5 +34,11 @@ public class Factory {
         moto.setNombre(motoDTO.getMarca());
         moto.setYear(motoDTO.getModelo());
         return moto;
+    }
+
+    public List<MotoDTO> listEntityToListDTO(List<Moto> motos){
+        List<MotoDTO> motoDTOList = new ArrayList<>();
+        motos.forEach(moto -> motoDTOList.add(entityToDTO(moto)));
+        return motoDTOList;
     }
 }
