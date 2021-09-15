@@ -19,8 +19,11 @@ public class MotoServiceImp implements MotoServiceInterface{
 
     @Override
     public Respuesta save(MotoDTO motoDTO) {
-        //motoRepos.save()
-        return null;
+        if(motoRepos.existsById(motoDTO.getMatricula())){
+            motoRepos.save(factory.DtoToEntitySave(motoDTO));
+            return new Respuesta("Borrado!");
+        }
+        return new Respuesta("No existe registro con el "+ motoDTO.getMatricula());
     }
 
     @Override
