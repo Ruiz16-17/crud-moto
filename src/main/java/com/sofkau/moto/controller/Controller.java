@@ -26,7 +26,8 @@ public class Controller {
 
     @DeleteMapping("/{id}")
     public Respuesta deleteMoto(@PathVariable Integer id){
-        return new Respuesta("");
+       return service.delete(id);
+
     }
 
     @PutMapping
@@ -34,5 +35,8 @@ public class Controller {
         return service.update(motoDTO);
     }
 
-
+    @PostMapping("/agregar")
+    public Respuesta agregarMoto(@RequestBody MotoDTO motoDTO){
+        return  service.save(motoDTO);
+    }
 }
