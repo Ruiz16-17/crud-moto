@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/moto")
+@CrossOrigin(origins = "http://localhost:3000/")
 public class Controller {
     @Autowired
     private MotoServiceInterface service;

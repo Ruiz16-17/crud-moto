@@ -2,6 +2,8 @@ package com.sofkau.moto.dto;
 
 import lombok.Data;
 
+
+
 @Data
 public class MotoDTO {
     private Integer matricula;
